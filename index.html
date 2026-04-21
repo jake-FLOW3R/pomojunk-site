@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomo Land & Junk Solutions | Sonoma County Property Cleanup & Junk Removal</title>
+    <meta name="description" content="Native-owned junk removal, landscape maintenance, and property cleanup services in Sonoma County. Free estimates. Call or text 707-929-4162.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --bg-elevated: #141414;
+            --red: #C0392B;
+            --red-hover: #a5301f;
+            --white: #F5F5F5;
+            --silver: #B0B0B0;
+            --border: #222;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============ NAV ============ */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-mark {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 28px;
+            color: var(--red);
+            letter-spacing: 0.02em;
+        }
+
+        .logo-sub {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 9px;
+            color: var(--silver);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-phone {
+            font-weight: 600;
+            color: var(--white);
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-phone:hover {
+            color: var(--red);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            background: var(--red);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            letter-spacing: 0.02em;
+        }
+
+        .btn:hover {
+            background: var(--red-hover);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--silver);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--bg);
+        }
+
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 15px;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--red);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            padding-left: 60px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 5.5vw, 68px);
+            margin-bottom: 24px;
+        }
+
+        .hero .sub {
+            font-size: 18px;
+            color: var(--silver);
+            margin-bottom: 40px;
+            max-width: 520px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* // swap for real photo */
+        .hero-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 14px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .hero-image-placeholder::after {
+            content: 'Photo Placeholder';
+        }
+
+        /* ============ SECTIONS ============ */
+        section {
+            padding: 120px 0;
+        }
+
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+
+        .section-header {
+            margin-bottom: 64px;
+            max-width: 680px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 48px);
+        }
+
+        /* ============ SERVICES ============ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .service-group {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 40px 32px;
+            transition: border-color 0.2s;
+        }
+
+        .service-group:hover {
+            border-color: var(--red);
+        }
+
+        .service-group h3 {
+            font-size: 22px;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .service-group ul {
+            list-style: none;
+        }
+
+        .service-group li {
+            padding: 10px 0;
+            color: var(--silver);
+            font-size: 15px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .service-group li:last-child {
+            border-bottom: none;
+        }
+
+        .service-group li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--red);
+            border-radius: 50%;
+        }
+
+        /* ============ WHY ============ */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        .why-item h3 {
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+
+        .why-item p {
+            color: var(--silver);
+            font-size: 15px;
+        }
+
+        .why-item .num {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 13px;
+            color: var(--red);
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* ============ FOUNDERS ============ */
+        .founders-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .founder-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 48px 40px;
+            text-align: center;
+        }
+
+        /* // swap for real photo */
+        .founder-photo-placeholder {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1f1f1f 0%, #0f0f0f 100%);
+            border: 2px solid var(--red);
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .founder-photo-placeholder::after {
+            content: 'Photo';
+        }
+
+        .founder-card h3 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .founder-title {
+            color: var(--red);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .founder-bio {
+            color: var(--silver);
+            font-size: 15px;
+        }
+
+        /* ============ SERVICE AREA ============ */
+        .service-area {
+            text-align: center;
+        }
+
+        .service-area h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 24px;
+        }
+
+        .service-area p {
+            color: var(--silver);
+            font-size: 18px;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* ============ QUOTE FORM ============ */
+        .quote {
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quote-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .quote .section-header {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-field.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-field label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--silver);
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 14px 16px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--red);
+        }
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-submit {
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 16px;
+        }
+
+        .form-message {
+            display: none;
+            padding: 32px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .form-message.success {
+            background: rgba(192, 57, 43, 0.08);
+            border: 1px solid var(--red);
+            color: var(--white);
+        }
+
+        .form-message.error {
+            color: var(--red);
+            font-weight: 600;
+            margin-top: 16px;
+            padding: 12px;
+        }
+
+        .form-message h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .form-message p {
+            color: var(--silver);
+            font-size: 16px;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-tagline {
+            color: var(--red);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        .footer-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-list {
+            list-style: none;
+        }
+
+        .footer-list li {
+            color: var(--silver);
+            font-size: 15px;
+            padding: 6px 0;
+        }
+
+        .footer-list a {
+            color: var(--silver);
+            transition: color 0.2s;
+        }
+
+        .footer-list a:hover {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--silver);
+            font-size: 13px;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 900px) {
+            section {
+                padding: 80px 0;
+            }
+
+            .nav-inner {
+                padding: 14px 20px;
+            }
+
+            .nav-phone {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 0;
+                min-height: auto;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-content {
+                padding-left: 0;
+            }
+
+            .hero::before {
+                top: auto;
+                bottom: 40px;
+            }
+
+            .services-grid,
+            .why-grid,
+            .founders-grid,
+            .form-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .hero-ctas .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#top" class="logo">
+                <span class="logo-mark">POMO</span>
+                <span class="logo-sub">Land & Junk Solutions</span>
+            </a>
+            <div class="nav-right">
+                <a href="tel:7079294162" class="nav-phone">707-929-4162</a>
+                <a href="#quote" class="btn">Get a Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Reclaim Your Space.<br>Restore Your Property.</h1>
+                    <p class="sub">Native-owned and operated. Professional property solutions for Sonoma County and beyond.</p>
+                    <div class="hero-ctas">
+                        <a href="sms:7079294162" class="btn btn-lg">Text Us a Photo: 707-929-4162</a>
+                        <a href="#quote" class="btn btn-secondary btn-lg">Request a Quote</a>
+                    </div>
+                </div>
+                <!-- // swap for real photo -->
+                <div class="hero-image-placeholder"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">What We Do</div>
+                <h2>Full-service property care, one call away.</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-group">
+                    <h3>Junk Removal & Hauling</h3>
+                    <ul>
+                        <li>Residential Cleanouts (attic, garage, basement)</li>
+                        <li>Appliance & Furniture Disposal</li>
+                        <li>Construction Debris Hauling</li>
+                        <li>Estate & Rental Move-Outs</li>
+                        <li>Curbside Pickup</li>
+                    </ul>
+                </div>
+                <div class="service-group">
+                    <h3>Landscape Maintenance</h3>
+                    <ul>
+                        <li>Green Waste Hauling</li>
+                        <li>Seasonal Yard Cleanup</li>
+                        <li>Mowing & Edging</li>
+                        <li>Weed Control & Management</li>
+                        <li>Hedge & Shrub Trimming</li>
+                        <li>Pruning & Brush Thinning</li>
+                        <li>Defensible Space Clearing</li>
+                    </ul>
+                </div>
+                <div class="service-group">
+                    <h3>Property Services</h3>
+                    <ul>
+                        <li>Gutter Cleaning</li>
+                        <li>Pressure Washing</li>
+                        <li>Pet Waste Removal</li>
+                        <li>Light Demolition & Hauling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WHY POMO ============ -->
+    <section id="why">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">Why Pomo</div>
+                <h2>Integrity, accountability, and local roots.</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <span class="num">01</span>
+                    <h3>Native-Owned & Operated</h3>
+                    <p>We bring integrity and accountability to every job.</p>
+                </div>
+                <div class="why-item">
+                    <span class="num">02</span>
+                    <h3>Free Estimates</h3>
+                    <p>Text us a photo or fill out the form. Fast, no-pressure quotes.</p>
+                </div>
+                <div class="why-item">
+                    <span class="num">03</span>
+                    <h3>Sonoma County & Beyond</h3>
+                    <p>Based locally, available for larger jobs in Marin, Napa, Lake, and Mendocino counties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOUNDERS ============ -->
+    <section id="founders">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">Meet the Founders</div>
+                <h2>Built on trust and hard work.</h2>
+            </div>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <!-- // swap for real photo -->
+                    <div class="founder-photo-placeholder"></div>
+                    <h3>James W. Gentry III</h3>
+                    <div class="founder-title">Co-Founder</div>
+                    <!-- // add bio -->
+                    <p class="founder-bio">Bio placeholder. One to two sentences about James — his background, what he brings to the business, and what drives him.</p>
+                </div>
+                <div class="founder-card">
+                    <!-- // swap for real photo -->
+                    <div class="founder-photo-placeholder"></div>
+                    <h3>Jordun L. Ray</h3>
+                    <div class="founder-title">Co-Founder</div>
+                    <!-- // add bio -->
+                    <p class="founder-bio">Bio placeholder. One to two sentences about Jordun — his background, what he brings to the business, and what drives him.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICE AREA ============ -->
+    <section class="service-area" id="area">
+        <div class="container">
+            <div class="eyebrow">Service Area</div>
+            <h2>Proudly Serving Sonoma County</h2>
+            <p>Our home base is Sonoma County. For larger cleanout and haul-away jobs, we travel to Marin, Napa, Lake, and Mendocino counties. Contact us to discuss your project.</p>
+        </div>
+    </section>
+
+    <!-- ============ QUOTE FORM ============ -->
+    <section class="quote" id="quote">
+        <div class="container">
+            <div class="quote-inner">
+                <div class="section-header">
+                    <div class="eyebrow">Get Started</div>
+                    <h2>Request a Quote</h2>
+                </div>
+
+                <form id="quote-form">
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-field full">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-field full">
+                            <label for="service">Service Type</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service…</option>
+                                <optgroup label="Junk Removal & Hauling">
+                                    <option>Residential Cleanouts (attic, garage, basement)</option>
+                                    <option>Appliance & Furniture Disposal</option>
+                                    <option>Construction Debris Hauling</option>
+                                    <option>Estate & Rental Move-Outs</option>
+                                    <option>Curbside Pickup</option>
+                                </optgroup>
+                                <optgroup label="Landscape Maintenance">
+                                    <option>Green Waste Hauling</option>
+                                    <option>Seasonal Yard Cleanup</option>
+                                    <option>Mowing & Edging</option>
+                                    <option>Weed Control & Management</option>
+                                    <option>Hedge & Shrub Trimming</option>
+                                    <option>Pruning & Brush Thinning</option>
+                                    <option>Defensible Space Clearing</option>
+                                </optgroup>
+                                <optgroup label="Property Services">
+                                    <option>Gutter Cleaning</option>
+                                    <option>Pressure Washing</option>
+                                    <option>Pet Waste Removal</option>
+                                    <option>Light Demolition & Hauling</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-field full">
+                            <label for="description">Job Description</label>
+                            <textarea id="description" name="description" required></textarea>
+                        </div>
+                        <div class="form-field full">
+                            <label for="referral">How did you hear about us? (optional)</label>
+                            <input type="text" id="referral" name="referral">
+                        </div>
+                        <div class="form-field full form-submit">
+                            <button type="submit" class="btn btn-lg">Send My Request</button>
+                        </div>
+                    </div>
+                    <div class="form-message error" id="form-error">Something went wrong. Please text us directly at <a href="tel:7079294162" style="color:var(--red);text-decoration:underline;">707-929-4162</a>.</div>
+                </form>
+
+                <div class="form-message success" id="form-success">
+                    <h3>Thanks!</h3>
+                    <p>We'll be in touch shortly. For faster response, text us a photo at <a href="tel:7079294162" style="color:var(--white);font-weight:600;">707-929-4162</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo">
+                        <span class="logo-mark">POMO</span>
+                        <span class="logo-sub">Land & Junk Solutions</span>
+                    </div>
+                    <div class="footer-tagline">Native-Owned & Operated</div>
+                    <p style="color:var(--silver);font-size:14px;margin-top:20px;">Serving Sonoma County, with travel to Marin, Napa, Lake, and Mendocino counties for larger jobs.</p>
+                </div>
+                <div>
+                    <div class="footer-heading">Contact</div>
+                    <ul class="footer-list">
+                        <li><a href="tel:7079294162">Main: 707-929-4162</a></li>
+                        <li><a href="tel:7072832851">James: 707-283-2851</a></li>
+                        <li><a href="tel:7072606986">Jordun: 707-260-6986</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Email</div>
+                    <ul class="footer-list">
+                        <li><a href="mailto:james@pomojunk.com">james@pomojunk.com</a></li>
+                        <li><a href="mailto:jordun@pomojunk.com">jordun@pomojunk.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2026 Pomo Land & Junk Solutions. All rights reserved.</div>
+                <div>Native-Owned & Operated</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var form = document.getElementById('quote-form');
+            var success = document.getElementById('form-success');
+            var errorEl = document.getElementById('form-error');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                errorEl.style.display = 'none';
+
+                var submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending…';
+
+                var name = document.getElementById('name').value.trim();
+                var phone = document.getElementById('phone').value.trim();
+                var email = document.getElementById('email').value.trim();
+                var service = document.getElementById('service').value;
+                var description = document.getElementById('description').value.trim();
+                var referral = document.getElementById('referral').value.trim();
+
+                var payload = {
+                    businessId: 35,
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    message: service + ' — ' + description + (referral ? ' (Referral: ' + referral + ')' : ''),
+                    source: 'website'
+                };
+
+                fetch('https://getflow3r.com/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                .then(function (res) {
+                    if (!res.ok) throw new Error('Request failed');
+                    form.style.display = 'none';
+                    success.style.display = 'block';
+                    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .catch(function () {
+                    errorEl.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send My Request';
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
