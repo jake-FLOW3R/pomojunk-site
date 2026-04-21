@@ -212,12 +212,9 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            width: 100%;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: 1fr;
+            max-width: 760px;
+            gap: 0;
         }
 
         .hero-content {
@@ -240,26 +237,6 @@
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
-        }
-
-        /* // swap for real photo */
-        .hero-image-placeholder {
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-            font-size: 14px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .hero-image-placeholder::after {
-            content: 'Photo Placeholder';
         }
 
         /* ============ SECTIONS ============ */
@@ -408,27 +385,6 @@
             right: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--red), transparent);
-        }
-
-        /* // swap for real photo */
-        .founder-photo-placeholder {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1f1f1f 0%, #0f0f0f 100%);
-            border: 2px solid var(--red);
-            margin: 0 auto 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-            font-size: 11px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .founder-photo-placeholder::after {
-            content: 'Photo';
         }
 
         .founder-card h3 {
@@ -697,7 +653,15 @@
         <div class="nav-inner">
             <a href="#top" class="logo-link">
                 <div class="logo-wrap">
-                    <img src="logo.png" alt="Pomo Land & Junk Solutions emblem" class="logo-emblem" width="48" height="48" style="object-fit:contain;">
+                    <svg class="logo-emblem" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
+                        <circle cx="50" cy="50" r="46" fill="none" stroke="#C0392B" stroke-width="2.5"/>
+                        <polygon points="50,43 57,50 50,57 43,50" fill="#C0392B"/>
+                        <path d="M50,4 C50,4 70,20 66,38 C62,28 54,24 50,26 C46,20 42,10 50,4Z" fill="#C0392B" opacity="0.9"/>
+                        <path d="M96,50 C96,50 80,70 62,66 C72,62 76,54 74,50 C80,46 90,42 96,50Z" fill="#C0392B" opacity="0.9"/>
+                        <path d="M50,96 C50,96 30,80 34,62 C38,72 46,76 50,74 C54,80 58,90 50,96Z" fill="#C0392B" opacity="0.9"/>
+                        <path d="M4,50 C4,50 20,30 38,34 C28,38 24,46 26,50 C20,54 10,58 4,50Z" fill="#C0392B" opacity="0.9"/>
+                        <circle cx="50" cy="50" r="18" fill="none" stroke="#C0392B" stroke-width="1.5" opacity="0.6"/>
+                    </svg>
                     <div class="logo-text">
                         <span class="logo-mark">POMO</span>
                         <span class="logo-sub">Land & Junk Solutions</span>
@@ -725,8 +689,6 @@
                         <a href="#quote" class="btn btn-secondary btn-lg">Request a Quote</a>
                     </div>
                 </div>
-                <!-- // swap for real photo -->
-                <div class="hero-image-placeholder"></div>
             </div>
         </div>
     </section>
@@ -828,15 +790,11 @@
             </div>
             <div class="founders-grid">
                 <div class="founder-card">
-                    <!-- // swap for real photo -->
-                    <div class="founder-photo-placeholder"></div>
                     <h3>James W. Gentry III</h3>
                     <div class="founder-title">Co-Founder</div>
                     <p class="founder-bio">James brings the vision and the hustle — from first call to final haul, he's hands-on every step of the way.</p>
                 </div>
                 <div class="founder-card">
-                    <!-- // swap for real photo -->
-                    <div class="founder-photo-placeholder"></div>
                     <h3>Jordun L. Ray</h3>
                     <div class="founder-title">Co-Founder</div>
                     <p class="founder-bio">Jordun keeps the operation sharp. Detail-oriented and community-focused, he makes sure every job is done right.</p>
