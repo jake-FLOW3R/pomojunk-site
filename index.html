@@ -18,13 +18,16 @@
         }
 
         :root {
-            --bg: #0a0a0a;
-            --bg-elevated: #141414;
+            --bg: #0d0a08;
+            --bg-elevated: #161210;
             --red: #C0392B;
             --red-hover: #a5301f;
             --white: #F5F5F5;
             --silver: #B0B0B0;
-            --border: #222;
+            --border: #2a2018;
+            --warm: #1a1208;
+            --earth: #8B6914;
+            --earth-light: rgba(139,105,20,0.15);
         }
 
         html {
@@ -39,6 +42,19 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
         }
 
         h1, h2, h3, h4 {
@@ -188,7 +204,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at 70% 50%, rgba(192, 57, 43, 0.08) 0%, transparent 65%);
+            background:
+                radial-gradient(ellipse at 65% 40%, rgba(192,57,43,0.1) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(139,105,20,0.08) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -269,6 +287,12 @@
         }
 
         /* ============ SERVICES ============ */
+        #services {
+            background: var(--warm);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -352,8 +376,8 @@
         .why-item .num {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 13px;
-            color: var(--red);
+            font-size: 15px;
+            color: var(--earth);
             letter-spacing: 0.2em;
             margin-bottom: 20px;
             display: block;
@@ -367,11 +391,23 @@
         }
 
         .founder-card {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
+            background: linear-gradient(160deg, #161210 0%, #0f0c0a 100%);
+            border: 1px solid #2a2018;
             border-radius: 6px;
             padding: 48px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--red), transparent);
         }
 
         /* // swap for real photo */
@@ -433,7 +469,7 @@
 
         /* ============ QUOTE FORM ============ */
         .quote {
-            background: var(--bg-elevated);
+            background: linear-gradient(180deg, var(--bg-elevated) 0%, #120e0a 100%);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
@@ -541,7 +577,8 @@
         /* ============ FOOTER ============ */
         footer {
             padding: 80px 0 40px;
-            border-top: 1px solid var(--border);
+            background: #0a0704;
+            border-top: 1px solid #2a2018;
         }
 
         .footer-grid {
@@ -692,6 +729,7 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="eyebrow" style="margin-bottom:20px;">Sonoma County's Own</div>
+                    <div style="width:48px;height:3px;background:var(--red);margin-bottom:24px;"></div>
                     <h1>Reclaim Your Space.<br>Restore Your Property.</h1>
                     <p class="sub">Pomo Land & Junk Solutions is Native-owned and operated, rooted in Sonoma County, and built on the belief that your property deserves real care — not just a quick haul.</p>
                     <div class="hero-ctas">
@@ -704,6 +742,13 @@
             </div>
         </div>
     </section>
+
+    <!-- ============ ENERGY STRIP ============ -->
+    <div style="background:var(--red);padding:18px 24px;text-align:center;">
+        <p style="font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--white);letter-spacing:0.08em;text-transform:uppercase;margin:0;">
+            Free Estimates &nbsp;·&nbsp; Native-Owned &nbsp;·&nbsp; Sonoma County Proud &nbsp;·&nbsp; Call or Text 707-929-4162
+        </p>
+    </div>
 
     <!-- ============ SERVICES ============ -->
     <section id="services">
@@ -776,12 +821,13 @@
     </section>
 
     <!-- ============ QUOTE BANNER ============ -->
-    <section style="padding:60px 0;background:linear-gradient(135deg,#0f0f0f 0%,#1a0a0a 100%);border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;">
+    <section style="padding:60px 0;background:linear-gradient(135deg,#120d07 0%,#1a0a06 50%,#0d0a04 100%);border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;">
         <div class="container" style="text-align:center;">
             <p style="font-family:'Montserrat',sans-serif;font-size:clamp(20px,3vw,32px);font-weight:800;color:var(--white);max-width:700px;margin:0 auto 20px;">
                 "Modern Solutions, Timeless Stewardship."
             </p>
             <p style="color:var(--silver);font-size:16px;">— Pomo Land & Junk Solutions</p>
+            <div style="width:40px;height:2px;background:var(--red);margin:20px auto 0;opacity:0.6;"></div>
         </div>
     </section>
 
@@ -815,7 +861,7 @@
     </section>
 
     <!-- ============ SERVICE AREA ============ -->
-    <section class="service-area" id="area">
+    <section class="service-area" id="area" style="background:var(--warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
         <div class="container">
             <div class="eyebrow">Service Area</div>
             <h2>Proudly Serving Sonoma County</h2>
