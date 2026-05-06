@@ -208,9 +208,9 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            max-width: 760px;
-            gap: 0;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
         .hero-content {
@@ -233,6 +233,16 @@
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
+        }
+
+        .hero-img {
+            display: block;
+            max-width: 100%;
+            max-height: 640px;
+            height: auto;
+            width: auto;
+            margin: 0 auto;
+            border-radius: 6px;
         }
 
         /* ============ SECTIONS ============ */
@@ -381,6 +391,15 @@
             right: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--red), transparent);
+        }
+
+        .founder-photo {
+            display: block;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 24px;
         }
 
         .founder-card h3 {
@@ -671,6 +690,7 @@
                         <a href="#quote" class="btn btn-secondary btn-lg">Request a Quote</a>
                     </div>
                 </div>
+                <img src="assets/hero-action.jpg" alt="Pomo Land & Junk Solutions on a job site in Sonoma County." class="hero-img">
             </div>
         </div>
     </section>
@@ -772,11 +792,13 @@
             </div>
             <div class="founders-grid">
                 <div class="founder-card">
+                    <img src="assets/founder-james.jpg" alt="James W. Gentry III, Co-Founder" class="founder-photo">
                     <h3>James W. Gentry III</h3>
                     <div class="founder-title">Co-Founder</div>
                     <p class="founder-bio">James brings the vision and the hustle — from first call to final haul, he's hands-on every step of the way.</p>
                 </div>
                 <div class="founder-card">
+                    <img src="assets/founder-jordun.jpg" alt="Jordun L. Ray, Co-Founder" class="founder-photo">
                     <h3>Jordun L. Ray</h3>
                     <div class="founder-title">Co-Founder</div>
                     <p class="founder-bio">Jordun keeps the operation sharp. Detail-oriented and community-focused, he makes sure every job is done right.</p>
